@@ -1,0 +1,12 @@
+const titleProject = 'Оценка стоимости';
+console.log(typeof titleProject);
+const screensValue = 'шаблонные, с уникальным дизайном, с анимациями';
+console.log(typeof screensValue);
+const screenPrice = 67896;
+console.log(typeof screenPrice);
+const percentage = 34;
+console.log(typeof percentage);
+const fullPrice = 1000000;
+console.log(typeof fullPrice);
+const responsive = false;
+console.log(typeof responsive);
