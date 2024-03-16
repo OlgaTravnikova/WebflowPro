@@ -2,24 +2,14 @@ let titleProject = prompt('Название проекта');
 
 let screensValue = prompt('Типы экранов: шаблонный, с уникальным дизайном, с анимациями');
 
-let responsive = prompt('нужен респонсив сайт?');
-
-if (responsive == 'да') { 
-        responsive = true
-    } else if (responsive == 'нет') {
-        responsive = false;
-    }
+let responsive = confirm('нужен респонсив сайт?');
 
 let service1 = prompt('какой сервис нужен?');
 let servicePrice1 = +prompt('Сколько это будет стоить?');
 let service2 = prompt('какой еще сервис нужен?');
 let servicePrice2 = +prompt('Сколько будет стоить второй сервис?');
 
-let screenPrice = 45000;
-
 let fullPrice = screenPrice + servicePrice1 + servicePrice2;
-
-let percent = 10;
 
 let servicePercentPrice = Math.round(fullPrice * percent / 100);
 
