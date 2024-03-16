@@ -1,3 +1,8 @@
+
+let percent = 10;
+let screenPrice = 10000;
+
+
 let titleProject = prompt('Название проекта');
 
 let screensValue = prompt('Типы экранов: шаблонный, с уникальным дизайном, с анимациями');
