@@ -25,6 +25,7 @@ let fullPrice = getFullPrice();
 console.log("стоимость всего проекта:" + fullPrice)
 
 function getTitle (titleProject) {
+    titleProject = titleProject.trim();
     return titleProject.charAt(0).toUpperCase() + titleProject.slice(1).toLowerCase();
 }
 let newTitleProject = getTitle(titleProject);
