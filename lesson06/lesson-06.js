@@ -7,8 +7,7 @@ let fullPrice;
 let servicePercentPrice;
 let screensValue;
 let responsive;
-let servicePrice1;
-let servicePrice2;
+let servicePrice;
 
 const asking = function() {
     titleProject = prompt('Название проекта'); 
@@ -37,20 +36,24 @@ while (true) {
 
 
 const getAllServicePrices = function() {
+
     let sum = 0;
 
-    let needService = false;
     for (let i = 0; i < 2; i++) { 
 
         let textFromPrompt = prompt('Какой сервис еще нужен?'); 
         if (textFromPrompt === null) break; 
 
-        let servicePrice = prompt(`Сколько стоит?`); 
+        do {
+
+        servicePrice = prompt(`Сколько стоит?`); 
+            } while (servicePrice !== null && !checkIsNumber(servicePrice));
+
         if (servicePrice === null) break; 
 
-        if (checkIsNumber(servicePrice)) { 
+
             sum += parseFloat(servicePrice); 
-        }
+        
     }
     
     return sum; 
