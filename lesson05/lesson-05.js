@@ -1,5 +1,15 @@
-let percent = 10;
+let percentage = 10;
 let screenPrice = 10000;
+let AllServicePrices;
+let newTitleProject = '';
+let fullPrice;
+let servicePercentPrice;
+
+const asking = function() {
+    // 
+}
+
+
 
 
 let titleProject = prompt('Название проекта');
@@ -10,34 +20,30 @@ let servicePrice1 = +prompt('Сколько это будет стоить?');
 let service2 = prompt('какой еще сервис нужен?');
 let servicePrice2 = +prompt('Сколько будет стоить второй сервис?');
 
-//lesson05
 
-let getAllServicePrices = function () {
+
+
+
+//стоимость всех услуг
+const getAllServicePrices = function () {
     return servicePrice1 + servicePrice2;
 };
-let AllServicePrices = getAllServicePrices();
-console.log("стоимость всех услуг:" + AllServicePrices);
 
+
+//стоимость всего проекта
 function getFullPrice() {
    return getAllServicePrices() + screenPrice;
 };
-let fullPrice = getFullPrice();
-console.log("стоимость всего проекта:" + fullPrice)
 
-function getTitle (titleProject) {
-    titleProject = titleProject.trim();
-    return titleProject.charAt(0).toUpperCase() + titleProject.slice(1).toLowerCase();
-}
-let newTitleProject = getTitle(titleProject);
-console.log(newTitleProject);
 
+
+//процент подрядчику
 function getServicePercentPrices () {
-   return Math.round(fullPrice * percent / 100);
+   return  fullPrice - (fullPrice * ( percentage / 100));
 }
-let servicePercentPrice = fullPrice - getServicePercentPrices();
-console.log("стоимость проекта с учётом скидки подрядчику" + servicePercentPrice)
 
 
+//скидка
 function getRollbackMessage(fullPrice) {
     if (fullPrice >= 50000) {
         return('скидка 10%');
@@ -50,4 +56,23 @@ function getRollbackMessage(fullPrice) {
     }
 }
 
+
+//правка написания названия проекта
+function getTitle (titleProject) {
+    titleProject = titleProject.trim();
+    return titleProject.charAt(0).toUpperCase() + titleProject.slice(1).toLowerCase();
+}
+
+
+
+
+asking();
+AllServicePrices = getAllServicePrices();
+fullPrice = getFullPrice();
+
 console.log(getRollbackMessage(fullPrice));
+
+
+newTitleProject = getTitle(titleProject);
+console.log(newTitleProject);
+
